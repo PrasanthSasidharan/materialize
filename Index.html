@@ -9,6 +9,10 @@
       padding-left: 300px;
     }
 
+    .side-nav-under-toolbar {
+      top: unset !important;
+    }
+
     @media only screen and (max-width : 992px) {
 
       header,
@@ -19,7 +23,8 @@
     }
   </style>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" media="screen,projection">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    media="screen,projection">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
@@ -27,8 +32,9 @@
   <div id="horizontal-nav-bar">
     <nav>
       <div class="nav-wrapper">
-        <a href="#!" class="brand-logo">Logo</a>
-        <ul class="right hide-on-med-and-down">
+        <a href="#!" class="brand-logo right">Logo</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class=" hide-on-med-and-down">
           <li><a href="sass.html">Sass</a></li>
           <li><a href="badges.html">Components</a></li>
           <li><a href="collapsible.html">Javascript</a></li>
@@ -36,6 +42,13 @@
         </ul>
       </div>
     </nav>
+  </div>
+
+  <div id="side-nav">
+    <ul id="mobile-demo" class="sidenav sidenav-fixed side-nav-under-toolbar">
+      <li><a href="#!">First Sidebar Link</a></li>
+      <li><a href="#!">Second Sidebar Link</a></li>
+    </ul>
   </div>
   <div class="container">
     <h1>Colors</h1>
@@ -46,7 +59,7 @@
 
     <button class="btn waves-effect">Read more</button>
     <button class="btn disabled ">Edit</button>
-    
+
     <button class="btn add">
       <i class="material-icons left">warning</i> Upload
     </button>
@@ -74,7 +87,7 @@
     // Or with jQuery
     $(document).ready(function () {
       $('.fixed-action-btn').floatingActionButton();
-      $('.sidenav').sidenav();
+      $('.sidenav').sidenav({ "preventScrolling": false });
     });
   </script>
 </body>
